@@ -1,8 +1,6 @@
 {
   "name": "Perception-Playground (ROS 2 Jazzy + Nav2)",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "image": "lichunho00/perception_playground",
   "remoteEnv": {
     "ROS_DISTRO": "jazzy",
     "DISPLAY": ":1",
