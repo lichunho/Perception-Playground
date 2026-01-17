@@ -1,6 +1,7 @@
 {
   "name": "Perception-Playground (ROS 2 Jazzy + Nav2)",
   "image": "lichunho00/perception_playground",
+  "initializeCommand": "bash -lc 'if [ ! -f .devcontainer/.env ]; then cp .devcontainer/.env.example .devcontainer/.env; fi'",
   "remoteEnv": {
     "ROS_DISTRO": "jazzy",
     "DISPLAY": ":1",
