@@ -1,15 +1,6 @@
 {
   "name": "Perception-Playground (ROS 2 Jazzy + Nav2)",
-  "image": "lichunho00/perception_playground",
-  "initializeCommand": "bash -lc 'if [ ! -f .devcontainer/.env ]; then cp .devcontainer/.env.example .devcontainer/.env; fi'",
-  "remoteEnv": {
-    "ROS_DISTRO": "jazzy",
-    "DISPLAY": ":1",
-    "VNC_PASSWORD": "${localEnv:VNC_PASSWORD}"
-  },
-  "runArgs": [
-    "--env-file=${localWorkspaceFolder}/.devcontainer/.env"
-  ],
+  "image": "lichunho00/perception_playground:jazzy",
   "forwardPorts": [
     6080,
     5901

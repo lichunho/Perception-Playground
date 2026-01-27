@@ -1,1 +1,0 @@
-print("Hello from perception_playground!")
