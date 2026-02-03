@@ -1,0 +1,552 @@
+<sdf version='1.11'>
+  <model name='rover'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0 0 -0.024975008330556481 0 0 0</pose>
+        <mass>3.0009999999999999</mass>
+        <inertia>
+          <ixx>0.016355623125624792</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.023131623125624789</iyy>
+          <iyz>0</iyz>
+          <izz>0.038225000000000002</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_fixed_joint_lump__body_collision'>
+        <pose>0 0 -0.025000000000000001 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.29999999999999999 0.25 0.050000000000000003</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__imu_link_collision_1'>
+        <pose>0 0 0.050000000000000003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.050000000000000003 0.050000000000000003 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Green</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.625 0.625 0.625 1</diffuse>
+          <ambient>0.625 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__body_visual_1'>
+        <pose>0 0 -0.025000000000000001 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.29999999999999999 0.25 0.050000000000000003</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0.625 0.625 0.625 1</diffuse>
+          <ambient>0.625 0.625 0.625 1</ambient>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__imu_link_visual_2'>
+        <pose>0 0 0.050000000000000003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.001 0.001 0.001</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='left_bogie_front_axle' type='revolute'>
+      <pose relative_to='base_link'>0.25 0.20000000000000001 -0.20000000000000001 1.5707963300000001 0 0</pose>
+      <parent>base_link</parent>
+      <child>left_bogie_front_wheel</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <effort>5.1276599999999997</effort>
+          <velocity>244.86959999999999</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_bogie_front_wheel'>
+      <pose relative_to='left_bogie_front_axle'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.20000000000000001</mass>
+        <inertia>
+          <ixx>0.00038406250000000002</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00038406250000000002</iyy>
+          <iyz>0</iyz>
+          <izz>0.00058062500000000009</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_bogie_front_wheel_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.074999999999999997</length>
+            <radius>0.057500000000000002</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_bogie_front_wheel_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.074999999999999997</length>
+            <radius>0.057500000000000002</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='left_bogie_rear_axle' type='revolute'>
+      <pose relative_to='base_link'>0.049999999999999989 0.20000000000000001 -0.20000000000000001 1.5707963300000001 0 0</pose>
+      <parent>base_link</parent>
+      <child>left_bogie_rear_wheel</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <effort>5.1276599999999997</effort>
+          <velocity>244.86959999999999</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_bogie_rear_wheel'>
+      <pose relative_to='left_bogie_rear_axle'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.20000000000000001</mass>
+        <inertia>
+          <ixx>0.00038406250000000002</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00038406250000000002</iyy>
+          <iyz>0</iyz>
+          <izz>0.00058062500000000009</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_bogie_rear_wheel_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.074999999999999997</length>
+            <radius>0.057500000000000002</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_bogie_rear_wheel_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.074999999999999997</length>
+            <radius>0.057500000000000002</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='left_rocker_rear_axle' type='revolute'>
+      <pose relative_to='base_link'>-0.17499999999999999 0.20000000000000001 -0.20000000000000001 1.5707963300000001 0 0</pose>
+      <parent>base_link</parent>
+      <child>left_rocker_rear_wheel</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <effort>5.1276599999999997</effort>
+          <velocity>244.86959999999999</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_rocker_rear_wheel'>
+      <pose relative_to='left_rocker_rear_axle'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.20000000000000001</mass>
+        <inertia>
+          <ixx>0.00038406250000000002</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00038406250000000002</iyy>
+          <iyz>0</iyz>
+          <izz>0.00058062500000000009</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_rocker_rear_wheel_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.074999999999999997</length>
+            <radius>0.057500000000000002</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_rocker_rear_wheel_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.074999999999999997</length>
+            <radius>0.057500000000000002</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='right_bogie_front_axle' type='revolute'>
+      <pose relative_to='base_link'>0.25 -0.20000000000000001 -0.20000000000000001 1.5707963300000001 0 0</pose>
+      <parent>base_link</parent>
+      <child>right_bogie_front_wheel</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <effort>5.1276599999999997</effort>
+          <velocity>244.86959999999999</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_bogie_front_wheel'>
+      <pose relative_to='right_bogie_front_axle'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.20000000000000001</mass>
+        <inertia>
+          <ixx>0.00038406250000000002</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00038406250000000002</iyy>
+          <iyz>0</iyz>
+          <izz>0.00058062500000000009</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_bogie_front_wheel_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.074999999999999997</length>
+            <radius>0.057500000000000002</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_bogie_front_wheel_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.074999999999999997</length>
+            <radius>0.057500000000000002</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='right_bogie_rear_axle' type='revolute'>
+      <pose relative_to='base_link'>0.049999999999999989 -0.20000000000000001 -0.20000000000000001 1.5707963300000001 0 0</pose>
+      <parent>base_link</parent>
+      <child>right_bogie_rear_wheel</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <effort>5.1276599999999997</effort>
+          <velocity>244.86959999999999</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_bogie_rear_wheel'>
+      <pose relative_to='right_bogie_rear_axle'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.20000000000000001</mass>
+        <inertia>
+          <ixx>0.00038406250000000002</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00038406250000000002</iyy>
+          <iyz>0</iyz>
+          <izz>0.00058062500000000009</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_bogie_rear_wheel_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.074999999999999997</length>
+            <radius>0.057500000000000002</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_bogie_rear_wheel_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.074999999999999997</length>
+            <radius>0.057500000000000002</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='right_rocker_rear_axle' type='revolute'>
+      <pose relative_to='base_link'>-0.17499999999999999 -0.20000000000000001 -0.20000000000000001 1.5707963300000001 0 0</pose>
+      <parent>base_link</parent>
+      <child>right_rocker_rear_wheel</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <effort>5.1276599999999997</effort>
+          <velocity>244.86959999999999</velocity>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_rocker_rear_wheel'>
+      <pose relative_to='right_rocker_rear_axle'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.20000000000000001</mass>
+        <inertia>
+          <ixx>0.00038406250000000002</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00038406250000000002</iyy>
+          <iyz>0</iyz>
+          <izz>0.00058062500000000009</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_rocker_rear_wheel_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.074999999999999997</length>
+            <radius>0.057500000000000002</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_rocker_rear_wheel_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.074999999999999997</length>
+            <radius>0.057500000000000002</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'/>
+    <plugin name='imu_sim' filename='libhector_gazebo_ros_imu.so'>
+      <alwaysOn>true</alwaysOn>
+      <topicName>imu/data</topicName>
+      <updateRate>100.0</updateRate>
+      <serviceName>imu_service</serviceName>
+      <frameId>imu_link</frameId>
+      <accelOffset>0.1 0.1 0.1</accelOffset>
+      <accelDrift>0.0 0.0 0.0</accelDrift>
+      <accelDriftFrequency>0.0 0.0 0.0</accelDriftFrequency>
+      <accelGaussianNoise>0.35 0.35 0.3</accelGaussianNoise>
+      <rateOffset>0.0 0.0 0.0</rateOffset>
+      <rateDrift>0.01 0.01 0.01</rateDrift>
+      <rateDriftFrequency>0.0 0.0 0.0</rateDriftFrequency>
+      <rateGaussianNoise>0.05 0.05 0.015</rateGaussianNoise>
+      <headingOffset>0.0 0.0 0.0</headingOffset>
+      <headingDrift>0.0 0.0 0.0</headingDrift>
+      <headingDriftFrequency>0.0 0.0 0.0</headingDriftFrequency>
+      <headingGaussianNoise>0.05 0.05 0.05</headingGaussianNoise>
+      <bodyName>base_link</bodyName>
+      <xyzOffset>0 0 0.05</xyzOffset>
+      <rpyOffset>0 -0 0</rpyOffset>
+      <gz::corrected_offsets>1</gz::corrected_offsets>
+    </plugin>
+    <plugin name='magnetic_sim' filename='libhector_gazebo_ros_magnetic.so'>
+      <alwaysOn>true</alwaysOn>
+      <topicName>magnetic/data</topicName>
+      <updateRate>100.0</updateRate>
+      <frameId>imu_link</frameId>
+      <magnitude>46967.9</magnitude>
+      <declination>-2.3865</declination>
+      <inclination>-61.7292</inclination>
+      <offset>0.0 0.0 0.0</offset>
+      <drift>0.0 0.0 0.0</drift>
+      <gaussianNoise>100.0 100.0 100.0</gaussianNoise>
+      <bodyName>base_link</bodyName>
+      <xyzOffset>0 0 0.05</xyzOffset>
+      <rpyOffset>0 -0 0</rpyOffset>
+      <gz::corrected_offsets>1</gz::corrected_offsets>
+    </plugin>
+    <plugin name='gps_sim' filename='libhector_gazebo_ros_gps.so'>
+      <updateRate>1.0</updateRate>
+      <frameId>imu_link</frameId>
+      <topicName>gps/fix</topicName>
+      <velocityTopicName>gps/vel</velocityTopicName>
+      <referenceLatitude>46.518125</referenceLatitude>
+      <referenceLongitude>6.565539</referenceLongitude>
+      <drift>0 0 0</drift>
+      <gaussianNoise>0.0 0.0 0.0</gaussianNoise>
+      <velocityDrift>0 0 0</velocityDrift>
+      <velocityGaussianNoise>0.05 0.05 0.05</velocityGaussianNoise>
+      <bodyName>base_link</bodyName>
+      <xyzOffset>0 0 0.05</xyzOffset>
+      <rpyOffset>0 -0 0</rpyOffset>
+      <gz::corrected_offsets>1</gz::corrected_offsets>
+    </plugin>
+    <frame name='base_link_to_chasis' attached_to='base_link'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='body' attached_to='base_link_to_chasis'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='imu_joint' attached_to='base_link'>
+      <pose>0 0 0.050000000000000003 0 0 0</pose>
+    </frame>
+    <frame name='imu_link' attached_to='imu_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+  </model>
+</sdf>
