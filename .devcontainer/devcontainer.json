@@ -1,6 +1,6 @@
 {
   "name": "Perception-Playground (ROS 2 Jazzy + Nav2)",
-  "image": "lichunho00/perception_playground:jazzy",
+  "image": "ghcr.io/space-and-satellite-systems-uc-davis/ros-container:jazzy",
   "forwardPorts": [
     6080,
     5901
